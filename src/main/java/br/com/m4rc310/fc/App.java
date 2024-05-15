@@ -38,7 +38,6 @@ public class App {
 	@PostConstruct
 	void init() {
 		TimeZone.setDefault(TimeZone.getTimeZone("GMT-3"));
-
 //		UserId userId = UserId.from("test");
 		UserId userId = new UserId();
 		userId.setUsername("test");
