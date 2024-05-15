@@ -45,7 +45,8 @@ public class SecurityConfig {
 	            .exposedHeaders("Access-Control-Expose-Headers", "Authorization", "Cache-Control", "Content-Type", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Origin")
 	            .allowedMethods("PUT","GET","POST","DELETE","OPTIONS");
 				
-				log.info(">>> {}", registry);
+				
+				log.info(">>> {}", registry.toString());
 			}
 		};
 	}
