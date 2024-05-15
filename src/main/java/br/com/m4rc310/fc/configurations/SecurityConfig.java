@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import br.com.m4rc310.fc.registry.models.user.User;
 import br.com.m4rc310.fc.registry.models.user.UserPK;
@@ -18,6 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Configuration
 @EnableCaching
+@EnableWebMvc
 public class SecurityConfig {
 
 	@Autowired
@@ -27,6 +31,26 @@ public class SecurityConfig {
 	@Autowired
 	@Lazy
 	private PasswordEncoder encoder;
+	
+	
+	@Bean 
+	WebMvcConfigurer corsConfigurer(){
+		return new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry
+	            .addMapping("/**")
+	            .allowedOrigins("*")
+	            .allowedHeaders("MLS","Authorization", "Cache-Control", "Content-Type", "Accept", "X-Requested-With", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Origin")
+	            .exposedHeaders("Access-Control-Expose-Headers", "Authorization", "Cache-Control", "Content-Type", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Origin")
+	            .allowedMethods("PUT","GET","POST","DELETE","OPTIONS");
+				
+				log.info(">>> {}", registry);
+			}
+		};
+	}
+
+	
 
 	// @Bean
 	MUser loadUserTest() {
