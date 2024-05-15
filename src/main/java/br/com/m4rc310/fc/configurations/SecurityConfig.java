@@ -51,8 +51,6 @@ public class SecurityConfig {
 		};
 	}
 
-	
-
 	// @Bean
 	MUser loadUserTest() {
 		MUser user = new MUser();
