@@ -58,8 +58,12 @@ public class CachedService extends MService{
 	@CacheEvict(value = ACCOUNT_CACHE_KEY, key = "#number")
 	public Account cancelAccount(Long number) {
 		Account account = getAccount(number);
-		accountRepository.delete(account);;
-		return null;
+		if (movtoRepository.findAllByAccount(account).isEmpty()) {
+			accountRepository.delete(account);
+			return account;
+		}
+		account.setCancel(true);
+		return accountRepository.save(account);
 	}
 	
 	public List<Movto> getListMovto(Long number){
@@ -75,7 +79,6 @@ public class CachedService extends MService{
 				sequence = movto.getId().getSequence();
 			}
 		}
-		
 		
 		Account account = getAccount(numberAccount);
 		if (account.getKindAccount() == EKindAccount.DEBIT) {

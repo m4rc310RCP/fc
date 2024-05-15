@@ -28,4 +28,8 @@ public class Account implements MConsts, Serializable{
 	@Column(name = KIND$account)
 	@GraphQLQuery(name = KIND$account, description = DESC$kind_account)
 	private EKindAccount kindAccount;
+	
+	@Column(name = INDICATOR$cancel)
+	@GraphQLQuery(name = INDICATOR$cancel, description = DESC$indicator_cancel)
+	private Boolean cancel;
 }

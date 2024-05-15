@@ -42,10 +42,20 @@ public class Movto implements MConsts, Serializable{
 			return null;
 		}
 	}
+	
 	@GraphQLQuery(name = NUMBER$sequence, description = DESC$number_sequence)
 	public Integer numberSequence(@GraphQLContext Movto movto) {
 		try {
 			return id.getSequence();			
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	@GraphQLQuery(name = NUMBER$movto, description = DESC$number_movto)
+	public Long numberMovto(@GraphQLContext Movto movto) {
+		try {
+			return id.getNumber();		
 		} catch (Exception e) {
 			return null;
 		}
