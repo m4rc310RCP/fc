@@ -55,7 +55,7 @@ public class CachedService extends MService{
 		return accountRepository.save(account);
 	}
 
-	@CacheEvict(value = ACCOUNT_CACHE_KEY, key = "#number")
+	@CacheEvict(value = ACCOUNT_CACHE_KEY, allEntries = true)
 	public Account cancelAccount(Long number) {
 		Account account = getAccount(number);
 		if (movtoRepository.findAllByAccount(account).isEmpty()) {
