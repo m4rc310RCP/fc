@@ -66,9 +66,11 @@ public class CachedService extends MService{
 		return accountRepository.save(account);
 	}
 	
-	public List<Movto> getListMovto(Long number){
-		return movtoRepository.findAllByIdNumber(number);
+	public List<Movto> getListMovto(Long numberAccount){
+		Account account = getAccount(numberAccount);
+		return movtoRepository.findAllByAccount(account);
 	}
+
 	
 	
 	public List<Movto> addMovto(Long numberValue, Long numberAccount, BigDecimal value){

@@ -44,6 +44,7 @@ public interface MConsts {
 	public static final String DESC$discriminator_registry              = "${desc.discriminator.registry}";
 	public static final String DESC$indicator_cancel                    = "${desc.indicator.cancel}";
 	public static final String DESC$kind_account                        = "${desc.kind.account}";
+	public static final String DESC$list_movtos                         = "${desc.list.movtos}";
 	public static final String DESC$list_roles                          = "${desc.list.roles}";
 	public static final String DESC$mutation_add_movto                  = "${desc.mutation.add.movto}";
 	public static final String DESC$mutation_cancel_company             = "${desc.mutation.cancel.company}";
@@ -62,12 +63,14 @@ public interface MConsts {
 	public static final String DESC$query_consumption_account           = "${desc.query.consumption.account}";
 	public static final String DESC$query_consumption_accounts          = "${desc.query.consumption.accounts}";
 	public static final String DESC$query_test                          = "${desc.query.test}";
+	public static final String DESC$subscription_account                = "${desc.subscription.account}";
 	public static final String DESC$type_audit                          = "${desc.type.audit}";
 	public static final String DESC$type_company                        = "${desc.type.company}";
 	public static final String DESC$type_consumption_account            = "${desc.type.consumption.account}";
 	public static final String DESC$type_movto                          = "${desc.type.movto}";
 	public static final String DESC$type_registration                   = "${desc.type.registration}";
 	public static final String DESC$type_user                           = "${desc.type.user}";
+	public static final String DESC$value_balance                       = "${desc.value.balance}";
 	public static final String DESC$value_movto                         = "${desc.value.movto}";
 //--------------------------------------------------
 // @GraphQLQuery(name=DISCRIMINATOR$account, description=DESC$discriminator_account)
@@ -99,6 +102,9 @@ public interface MConsts {
 //--------------------------------------------------
 // @GraphQLQuery(name=KIND$account, description=DESC$kind_account)
 	public static final String KIND$account                             = "${kind.account}";
+//--------------------------------------------------
+// @GraphQLQuery(name=LIST$movtos, description=DESC$list_movtos)
+	public static final String LIST$movtos                              = "${list.movtos}";
 //--------------------------------------------------
 // @GraphQLQuery(name=LIST$roles, description=DESC$list_roles)
 	public static final String LIST$roles                               = "${list.roles}";
@@ -154,6 +160,9 @@ public interface MConsts {
 // @GraphQLQuery(name=QUERY$test, description=DESC$query_test)
 	public static final String QUERY$test                               = "${query.test}";
 //--------------------------------------------------
+// @GraphQLSubscription(name=SUBSCRIPTION$account, description=DESC$subscription_account)
+	public static final String SUBSCRIPTION$account                     = "${subscription.account}";
+//--------------------------------------------------
 // @GraphQLType(name=TYPE$audit, description=DESC$type_audit)
 	public static final String TYPE$audit                               = "${type.audit}";
 //--------------------------------------------------
@@ -180,6 +189,9 @@ public interface MConsts {
 //--------------------------------------------------
 // @GraphQLType(name=TYPE$user, description=DESC$type_user)
 	public static final String TYPE$user                                = "${type.user}";
+//--------------------------------------------------
+// @GraphQLQuery(name=VALUE$balance, description=DESC$value_balance)
+	public static final String VALUE$balance                            = "${value.balance}";
 //--------------------------------------------------
 // @GraphQLQuery(name=VALUE$movto, description=DESC$value_movto)
 	public static final String VALUE$movto                              = "${value.movto}";
