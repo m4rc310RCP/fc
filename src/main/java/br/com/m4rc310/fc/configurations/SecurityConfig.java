@@ -33,7 +33,7 @@ public class SecurityConfig {
 	private PasswordEncoder encoder;
 	
 	
-	@Bean 
+//	@Bean 
 	WebMvcConfigurer corsConfigurer(){
 		return new WebMvcConfigurer() {
 			@Override

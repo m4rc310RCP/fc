@@ -15,14 +15,12 @@ import br.com.m4rc310.fc.registry.models.user.User;
 import br.com.m4rc310.fc.registry.models.user.UserId;
 import br.com.m4rc310.fc.services.IAudit;
 import br.com.m4rc310.fc.services.MService;
-import io.jsonwebtoken.lang.Arrays;
 import io.leangen.graphql.annotations.GraphQLArgument;
 import io.leangen.graphql.annotations.GraphQLContext;
 import io.leangen.graphql.annotations.GraphQLMutation;
 import io.leangen.graphql.annotations.GraphQLQuery;
 import io.leangen.graphql.annotations.GraphQLSubscription;
 import io.leangen.graphql.spqr.spring.annotations.GraphQLApi;
-import reactor.core.publisher.Flux;
 
 @Service
 @GraphQLApi
